@@ -1,0 +1,10 @@
+{
+  "short_name": "Mem Site Alk",
+  "name": "Mem Site App ALK",
+  "icons": [
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
