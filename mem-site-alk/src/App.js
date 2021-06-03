@@ -1,5 +1,5 @@
 import "App.css";
-import { MenuComponent } from "Components/MenuComponent";
+import MenuComponent from "Components/MenuComponent";
 import { SwitchComponent } from "Components/SwitchComponent";
 import { BrowserRouter as Router } from "react-router-dom";
 

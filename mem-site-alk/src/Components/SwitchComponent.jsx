@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import { RegularView } from "Views/RegularView";
+import { HotView } from "Views/HotView";
 import { cloneDeep } from "lodash";
 
 const INITIAL_MEMS = [
@@ -33,10 +34,10 @@ export const SwitchComponent = () => {
           <p>HomePage</p>
         </Route>
         <Route path="/hot">
-          <p>There will be HOT page soon!</p>
+          <HotView mems={mems.filter((mem)=>mem.upvotes - mem.downvotes > 5)} doUpvote={upvote} doDownvote={downvote}/>
         </Route>
         <Route path="/regular">
-          <RegularView mems={mems} doUpvote={upvote} doDownvote={downvote}/>
+          <RegularView mems={mems.filter((mem)=>mem.upvotes - mem.downvotes <= 5)} doUpvote={upvote} doDownvote={downvote}/>
         </Route>
         <Route path="*">
           <div>Uuups! Page Not Found! :(</div>

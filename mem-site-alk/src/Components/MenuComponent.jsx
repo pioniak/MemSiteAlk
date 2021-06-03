@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 
-export const MenuComponent = () => {
+const MenuComponent = () => {
   return (
     <>
       <NavLink className="NavItem" to="/hot">
-        Hot
+        Hot 
       </NavLink>
       <NavLink className="NavItem" to="/regular">
         Regular
@@ -12,3 +12,5 @@ export const MenuComponent = () => {
     </>
   );
 };
+
+export default MenuComponent;
