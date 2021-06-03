@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import { RegularView } from "Views/RegularView";
+import { cloneDeep } from "lodash";
 
 const INITIAL_MEMS = [
   {id: 1, title:"Mem 1", imgAltName: "alt text 1", imgSrc:"https://i.imgur.com/ijOz34e.jpg", upvotes: 0, downvotes: 0},
@@ -10,6 +11,20 @@ const INITIAL_MEMS = [
 
 export const SwitchComponent = () => {
   const [mems, setMems] = useState(INITIAL_MEMS);
+  const upvote = (id) =>{
+    const newMems = cloneDeep(mems);
+    const updatedMem = newMems.find(mem => mem.id === id);
+    updatedMem.upvotes++;
+    console.log(newMems);
+    setMems(newMems);
+  }
+  const downvote = (id) =>{
+    const newMems = cloneDeep(mems);
+    const updatedMem = newMems.find(mem => mem.id === id);
+    updatedMem.downvotes++;
+    console.log(newMems);
+    setMems(newMems);
+  }
 
   return (
     <>
@@ -21,7 +36,7 @@ export const SwitchComponent = () => {
           <p>There will be HOT page soon!</p>
         </Route>
         <Route path="/regular">
-          <RegularView mems={mems}/>
+          <RegularView mems={mems} doUpvote={upvote} doDownvote={downvote}/>
         </Route>
         <Route path="*">
           <div>Uuups! Page Not Found! :(</div>
