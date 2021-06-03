@@ -1,13 +1,19 @@
-import 'App.css';
+import "App.css";
+import { MenuComponent } from "Components/MenuComponent";
+import { SwitchComponent } from "Components/SwitchComponent";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          There will be my app content soon!
-        </p>
-      </header>
+      <Router>
+        <div className="NavBar">
+          <MenuComponent />
+        </div>
+        <div className="Content">
+          <SwitchComponent />
+        </div>
+      </Router>
     </div>
   );
 }
