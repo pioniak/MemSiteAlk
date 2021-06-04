@@ -1,8 +1,9 @@
 import { MemComponent } from "Components/Mem/MemComponent";
 import { useSelector } from "react-redux";
+import { getRegular } from "store/selectors/selectors";
 
 export const RegularView = (props) => {
-  const mems = useSelector(state=>state.regular);
+  const mems = useSelector(getRegular);
   
   return (
     <>
