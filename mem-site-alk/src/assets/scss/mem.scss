@@ -3,22 +3,42 @@
 }
 
 .memImage{
-    height: 300px;
-    width: 300px;
+    height: 700px;
+    width: 700px;
 }
 
 .memImageContainer{
-    height: 300px;
-    width: 300px;
-    background-color: darkslategrey;
-    margin:auto;
+    height: 750px;
+    width: 700px;
+    background-color: whitesmoke;
     text-align: center;
     vertical-align: middle;
     overflow: hidden;
-    border: 1px solid green;
-    border-radius: 5%;
+    border: 1px solid black;
+    border-radius: 2%;
+    margin: auto;
 }
 
-.NavItem.active{
-    background-color: deeppink;
+.memContainer{
+    width: 90%;
+    text-align: center;
+}
+
+.starColor{
+    color: darkorange;
+}
+
+.scrollableGrid {
+    overflow: auto;
+    max-height: 95vh;
+    text-align: center;
+  }
+
+.root {
+    flex-grow: 1;
+  }
+
+  .memsContainer{
+    width: 90%;
+    text-align: center;
 }

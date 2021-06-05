@@ -1,9 +1,9 @@
 import { MemComponent } from "Components/Mem/MemComponent";
 import { useSelector } from "react-redux";
-import { getHot } from "store/selectors/selectors";
+import { getStar } from "store/selectors/selectors";
 
-export const HotView = () => {
-  const mems = useSelector(getHot);
+export const StarView = () => {
+  const mems = useSelector(getStar);
   
   return (
     <div className="memsContainer">

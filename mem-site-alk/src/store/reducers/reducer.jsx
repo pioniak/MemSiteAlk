@@ -5,6 +5,7 @@ import { TOGGLE_STAR } from "store/actions/actions";
 const IS_HOT_BOUNDARY = 5;
 
 const INITIAL_STATE = {
+  star: [],
   hot: [
     {
       id: 2,
@@ -49,7 +50,7 @@ const handleUpvote = (state, action) => {
   if (getScore(selectedMem) === IS_HOT_BOUNDARY) {
     const index = newState.regular.findIndex((mem) => mem === selectedMem);
     newState.regular.splice(index, 1);
-    newState.hot.push(selectedMem);
+    newState.hot.unshift(selectedMem);
   }
   selectedMem.upvotes++;
   return newState;
@@ -62,7 +63,7 @@ const handleDownvote = (state, action) => {
   if (getScore(selectedMem) === IS_HOT_BOUNDARY + 1) {
     const index = newState.hot.findIndex((mem) => mem === selectedMem);
     newState.hot.splice(index, 1);
-    newState.regular.push(selectedMem);
+    newState.regular.unshift(selectedMem);
   }
   selectedMem.downvotes++;
   return newState;
@@ -73,6 +74,12 @@ const handleToggleStar = (state, action) => {
   const allMems = newState.hot.concat(newState.regular);
   const selectedMem = allMems.find((mem) => mem.id === action.payload.id);
   selectedMem.hasStar = !selectedMem.hasStar;
+  if(selectedMem.hasStar){
+    newState.star.unshift(selectedMem);
+  } else {
+    const index = newState.star.findIndex((mem) => mem === selectedMem);
+    newState.star.splice(index, 1);
+  }
   return newState;
 };
 

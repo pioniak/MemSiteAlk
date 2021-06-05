@@ -5,3 +5,7 @@ export const getRegular = (state) =>{
 export const getHot = (state) => {
     return state.hot;
 }
+
+export const getStar = (state) =>{
+    return state.star;
+}
