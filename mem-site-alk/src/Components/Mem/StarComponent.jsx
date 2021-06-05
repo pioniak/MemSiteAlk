@@ -7,7 +7,7 @@ export const StarComponent = (props) => {
   const handleStar = props.handleStar;
   return (
     <Button onClick={handleStar}>
-      {hasStar ? <StarIcon className={"starColor"}/> : <StarOutlineIcon />}
+      {hasStar ? <StarIcon className={"starColor"} /> : <StarOutlineIcon />}
     </Button>
   );
 };

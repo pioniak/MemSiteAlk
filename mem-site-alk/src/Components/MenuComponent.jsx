@@ -36,7 +36,7 @@ export const MenuComponent = () => {
         <Button
           className={classes.navLink}
           color={isRegularActive ? "secondary" : "primary"}
-          size="large" 
+          size="large"
           component={NavLink}
           to={"/regular"}
         >
@@ -47,7 +47,7 @@ export const MenuComponent = () => {
         <Button
           className={classes.navLink}
           color={isHotActive ? "secondary" : "primary"}
-          size="large" 
+          size="large"
           component={NavLink}
           to={"/hot"}
         >
@@ -57,8 +57,8 @@ export const MenuComponent = () => {
       <Grid item xs>
         <Button
           className={classes.navLink}
-          color={isStarActive ? "secondary" : "primary" }
-          size="large" 
+          color={isStarActive ? "secondary" : "primary"}
+          size="large"
           component={NavLink}
           to={"/star"}
         >

@@ -4,7 +4,6 @@ import App from "App";
 import { Provider } from "react-redux";
 import memsStore from "store/store";
 
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={memsStore}>

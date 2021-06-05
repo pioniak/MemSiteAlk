@@ -74,7 +74,7 @@ const handleToggleStar = (state, action) => {
   const allMems = newState.hot.concat(newState.regular);
   const selectedMem = allMems.find((mem) => mem.id === action.payload.id);
   selectedMem.hasStar = !selectedMem.hasStar;
-  if(selectedMem.hasStar){
+  if (selectedMem.hasStar) {
     newState.star.unshift(selectedMem);
   } else {
     const index = newState.star.findIndex((mem) => mem === selectedMem);

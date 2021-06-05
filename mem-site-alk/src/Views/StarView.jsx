@@ -4,7 +4,7 @@ import { getStar } from "store/selectors/selectors";
 
 export const StarView = () => {
   const mems = useSelector(getStar);
-  
+
   return (
     <div className="memsContainer">
       {mems.length > 0

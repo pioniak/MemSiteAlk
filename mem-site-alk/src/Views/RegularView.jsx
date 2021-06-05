@@ -4,7 +4,7 @@ import { getRegular } from "store/selectors/selectors";
 
 export const RegularView = (props) => {
   const mems = useSelector(getRegular);
-  
+
   return (
     <div className="memsContainer">
       {mems.length > 0

@@ -4,7 +4,7 @@ import { getHot } from "store/selectors/selectors";
 
 export const HotView = () => {
   const mems = useSelector(getHot);
-  
+
   return (
     <div className="memsContainer">
       {mems.length > 0

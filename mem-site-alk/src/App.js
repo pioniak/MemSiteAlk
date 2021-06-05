@@ -6,7 +6,6 @@ import { MenuComponent } from "Components/MenuComponent";
 import { StarView } from "Views/StarView";
 
 function App() {
-
   return (
     <div className={"root"}>
       <Router>
