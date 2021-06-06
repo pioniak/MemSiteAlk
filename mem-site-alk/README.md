@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Application Info
+This app is a simple implementation of site displaying mems.
+Mems are stored as a static array of objects with images via url to https://picsum.photos/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Absolute path configuration
+In this project I've used absolute path via configuring it by jsconfig.json
+in VS Code change preferences to 
+### `"javascript.preferences.importModuleSpecifier": "non-relative"`
 
 ## Available Scripts
 
