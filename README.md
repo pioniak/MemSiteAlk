@@ -1,5 +1,5 @@
 # MemSiteAlk
 
-For application requirements see: requirements
+For application requirements see: [requirements](/requirements)
 
-For application implementation see: mem-site-alk
+For application implementation see: [mem-site-alk](/mem-site-alk)
