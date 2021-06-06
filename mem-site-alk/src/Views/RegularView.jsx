@@ -1,9 +1,14 @@
-import { MemComponent } from "Components/Mem/MemComponent";
+import { MemComponent } from "components/mem/MemComponent";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getRegular } from "store/selectors/selectors";
 
-export const RegularView = (props) => {
+export const RegularView = ({ scrollTop }) => {
   const mems = useSelector(getRegular);
+
+  useEffect(() => {
+    scrollTop();
+  }, [scrollTop]);
 
   return (
     <div className="memsContainer">

@@ -1,9 +1,14 @@
-import { MemComponent } from "Components/Mem/MemComponent";
+import { MemComponent } from "components/mem/MemComponent";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getHot } from "store/selectors/selectors";
 
-export const HotView = () => {
+export const HotView = ({ scrollTop }) => {
   const mems = useSelector(getHot);
+
+  useEffect(() => {
+    scrollTop();
+  }, [scrollTop]);
 
   return (
     <div className="memsContainer">

@@ -1,66 +1,47 @@
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
 import { NavLink, useLocation } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    margin: "20px",
-    width: "90%",
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
-  scroll: {
-    overflow: "auto",
-    maxHeight: "400px",
-  },
-  navLink: {
-    width: "100%",
-  },
-}));
+import { ROUTES } from "routes/routes";
 
 export const MenuComponent = () => {
   const location = useLocation();
-  const classes = useStyles();
+  const { pathname } = location;
 
-  const isHotActive = location.pathname === "/hot";
-  const isRegularActive = ["/", "/regular"].includes(location.pathname);
-  const isStarActive = location.pathname === "/star";
+  const isHotActive = pathname === ROUTES.hot;
+  const isRegularActive = pathname === ROUTES.regular;
+  const isStarActive = pathname === ROUTES.star;
+
   return (
     <>
       <Grid item xs>
         <Button
-          className={classes.navLink}
+          className="navlink"
           color={isRegularActive ? "secondary" : "primary"}
           size="large"
           component={NavLink}
-          to={"/regular"}
+          to={ROUTES.regular}
         >
           Regular
         </Button>
       </Grid>
       <Grid item xs>
         <Button
-          className={classes.navLink}
+          className="navlink"
           color={isHotActive ? "secondary" : "primary"}
           size="large"
           component={NavLink}
-          to={"/hot"}
+          to={ROUTES.hot}
         >
           Hot
         </Button>
       </Grid>
       <Grid item xs>
         <Button
-          className={classes.navLink}
+          className="navlink"
           color={isStarActive ? "secondary" : "primary"}
           size="large"
           component={NavLink}
-          to={"/star"}
+          to={ROUTES.star}
         >
           Starred
         </Button>

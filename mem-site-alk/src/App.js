@@ -1,11 +1,24 @@
 import Grid from "@material-ui/core/Grid";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { HotView } from "Views/HotView";
-import { RegularView } from "Views/RegularView";
-import { MenuComponent } from "Components/MenuComponent";
-import { StarView } from "Views/StarView";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
+import { HotView } from "views/HotView";
+import { RegularView } from "views/RegularView";
+import { MenuComponent } from "components/MenuComponent";
+import { StarView } from "views/StarView";
+import { ROUTES } from "routes/routes";
+import { useRef } from "react";
 
 function App() {
+  const memContainerRef = useRef();
+
+  const scrollToTop = () =>{
+    memContainerRef.current.scroll({top: 0, behavior: 'smooth'});
+  }
+
   return (
     <div className={"root"}>
       <Router>
@@ -14,16 +27,19 @@ function App() {
             <MenuComponent />
           </Grid>
 
-          <Grid item xs className={"scrollableGrid"}>
+          <Grid ref={memContainerRef} item xs className={"scrollableGrid"}>
             <Switch>
-              <Route path={["/", "/regular"]} exact={true}>
-                <RegularView />
+              <Route path={ROUTES.root} exact>
+                <Redirect to={ROUTES.regular} />
               </Route>
-              <Route path="/hot" exact={true}>
-                <HotView />
+              <Route path={ROUTES.regular} exact>
+                <RegularView scrollTop={scrollToTop}/>
               </Route>
-              <Route path="/star" exact={true}>
-                <StarView />
+              <Route path={ROUTES.hot} exact>
+                <HotView scrollTop={scrollToTop}/>
+              </Route>
+              <Route path={ROUTES.star} exact>
+                <StarView scrollTop={scrollToTop} />
               </Route>
               <Route path="*">
                 <div>Uuups! Page Not Found! :(</div>
